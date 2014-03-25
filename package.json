@@ -25,7 +25,8 @@
     "elasticsearch": "~1.5.10",
     "dateformat": "~1.0.7-1.2.3",
 	"redis": "~0.10.1",
-	"primus" : "2.0.4"
+	"primus" : "2.0.4",
+	"node-oyster" : "0.0.4"
   },
   "devDependencies": {
     "grunt-cli": "~0.1.11",
