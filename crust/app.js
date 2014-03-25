@@ -1,6 +1,8 @@
 // load config
 var config = require('./config')();
-require("./components")();
+require("../lib/components")();
+global.Packages.Oyster.Utils.logger("app_name"); //setting up logger info
+
 var express = require('express'),
 app = module.exports = express();
 // require("./components/index")(); // this will load all external components that will be consumed
@@ -40,10 +42,11 @@ require("./routes")(app); // load all routes
 app.use(global.Packages.Oyster.Middleware.error_handler); // to handle all the errors that are raised on app (should pass express cycle for e.g must call next(err); )
 
 require("./global_async")().then(function () {
-    
     app.listen(process.env.PORT); // this method is identical to http.createServer(app).listen(port);
-}).error(function () {
+    global.Logger.info("app started at port: " + process.env.PORT);
+}).error(function (e) {
     //log error here
+    global.logger.crash(e);
 });
 // start
 
