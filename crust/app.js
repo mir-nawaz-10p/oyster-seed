@@ -1,7 +1,7 @@
 // load config
 var config = require('./config')();
 require("../lib/components")();
-global.Packages.Oyster.Utils.logger("app_name"); //setting up logger info
+global.Packages.Oyster.Utils.logger("app_name")(); //setting up logger info
 
 var express = require('express'),
 app = module.exports = express();
@@ -33,7 +33,7 @@ app.set("view engine", 'html');
 app.use(express.static(__dirname + '/public')); //for static files to serve directly.
 app.use(global.Packages.Oyster.Middleware.allow_ajax); // allowing app to deal with ajax calls
 app.engine('html', require('ejs').renderFile); //mapping html to ejs renderer for rendering html files
-app.use(global.Packages.Oyster.Middleware.param_object); // this middleware add method "" in request object that iterates all params in request object and create object
+app.use(global.Packages.Oyster.Middleware.param_object); // this middleware add method "getInputObject" in request object that iterates all params in request object and create object
 
 app.use(app.router);
 
