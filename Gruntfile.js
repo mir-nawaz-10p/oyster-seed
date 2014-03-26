@@ -18,9 +18,14 @@ module.exports = function(grunt) {
                     "routes.js",
                     "global_async.js",
                     "Gruntfile.js",
-                    "controllers/*.js",
-                    "../lib/**/*.js",
-                    "../lib/tests/**/*.js"
+                    "lib/**/*.js",
+                    "crust/**/*.js",
+                    "crust/*.js",
+                    "tests/**/*.js"
+                ],
+
+                ignores: [
+                    "crust/public"
                 ]
             }
         },
@@ -33,17 +38,15 @@ module.exports = function(grunt) {
                 reporter: "dot"
             },
             all: {
-                src: ["tests/*.js", "../lib/tests/**/*.js"]
+                src: ["tests/**/*.js"]
             }
         },
         
         watch: {
             files: [
                 "Gruntfile.js",
-                "controllers/*.js",
-                "../lib/**/*.js",
-                "../lib/middleware/*.js",
-                "tests/**/*.js"
+                "lib/**/*.js"
+                
                 
             ],
             default: {
