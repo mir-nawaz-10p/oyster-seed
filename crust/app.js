@@ -3,7 +3,7 @@ var config = require("./config")();
 require("../lib/components")(); // this will load all external components that will be consumed
 var express = require("express"),
 app = module.exports = express();
-global.Packages.Oyster.Utils.logger("app_name")(); //setting up logger info
+global.Packages.Oyster.Utils.logger("app_name"); //setting up logger info
 
 
 // all environments
