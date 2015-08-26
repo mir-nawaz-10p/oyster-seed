@@ -1,15 +1,18 @@
 // this file contains all the routes 
 
-/*
-var middleware = require("../lib/middleware/index"),
+var accessTokenMiddleware = require("../lib/middleware/access_token"),
 testController = require("./controllers/index");
 
 function routes(app){
-    
+
+    app.get("/", function(req, res) {
+        res.send("Oyster-Seed - CRUST");
+    });
+
     // ******************** Test Controller ********************* 
-    app.post("/v1/auth/register", testController.registerAnonymous);
-    app.get("/v1/user",middleware, testController.counts);
+    app.post("/test", testController.testFunction);
+    app.get("/user", accessTokenMiddleware, testController.counts);
     
 }
 
-module.exports = routes;*/
+module.exports = routes;
