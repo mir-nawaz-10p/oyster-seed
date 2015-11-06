@@ -37,7 +37,7 @@ app.use(global.Packages.Oyster.Middleware.param_object); // this middleware add 
 
 //app.use(app.router);
 
-require("./routes")(app); // load all routes
+require("./appRoutes")(app); // load all routes
 
 app.use(global.Packages.Oyster.Middleware.error_handler); // to handle all the errors that are raised on app (should pass express cycle for e.g must call next(err); )
 

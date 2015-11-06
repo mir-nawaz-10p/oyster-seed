@@ -8,8 +8,7 @@ function testFunction(req, res, next){
 
     testFacade.testFunction(req.getInputObject()).then(function(output){
         res.status(200).send(global.shape(output))
-    })
-    .error(function(e){
+    }).catch(function(e){
         next(e);
     });
 }
@@ -20,8 +19,7 @@ function counts(req, res, next){
 
     testFacade.counts(req.getInputObject()).then(function(output){
         res.status(200).send(global.shape(output))
-    })
-        .error(function(e){
+    }).catch(function(e){
             next(e);
         });
 }
