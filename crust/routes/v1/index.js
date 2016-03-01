@@ -14,6 +14,5 @@ module.exports = function() {
 
         _fns[basename] = require("./" + file);
     });
-
     return _fns;
 };

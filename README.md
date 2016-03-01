@@ -3,20 +3,17 @@ oyster-seed
 
 Project initial template that based on oyster recommended structure to build node apps
 
-Log Folders/File
-===========
-info
 
---info.log
+## Prerequisites
 
-crashes
+- NodeJS `v4.2.4`
+- npm `v3.7.3`
+- nodemon 'v1.9.1'
+- MongoDB 'v3.2.3'
+- mysql  'Ver 14.14 Distrib 5.5.35'
 
---crashes.log
+## Setup Instructions
 
-errors
-
---errors.log
-
-web
-
---web.log
+- Clone repository
+- `$ npm install`
+- `$ npm start`

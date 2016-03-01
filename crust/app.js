@@ -45,10 +45,12 @@ require("./global_async")().then(function () {
     
     app.listen(process.env.PORT); // this method is identical to http.createServer(app).listen(port);
     global.Logger.info("app started at port: " + process.env.PORT);
+    console.log("app started at port: " + process.env.PORT);
 
 }).error(function (e) {
     //log error here
     global.logger.crash(e);
+    console.log(e);
 });
 // start
 

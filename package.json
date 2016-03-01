@@ -13,7 +13,8 @@
     "lodash": "~3.10.1",
     "moment": "~2.10.6",
     "request": "~2.61.0",
-	"node-oyster" : "git+https://github.com/faizulhaque/oyster.git"
+	"node-oyster" : "git+https://github.com/faizulhaque/oyster.git",
+  "storehouse": "git+https://github.com/mideveloper/storehouse.git"
   },
   "devDependencies": {
     "grunt-cli": "~0.1.11",
@@ -32,6 +33,7 @@
     "grunt-concurrent": "~0.4.3"
   },
   "scripts": {
-    "test": "./node_modules/.bin/grunt test"
+    "test": "./node_modules/.bin/grunt test",
+    "start": "nodemon ./crust/server.js"
   }
 }
