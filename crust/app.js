@@ -35,8 +35,21 @@ app.use(global.Packages.Oyster.Middleware.allow_ajax); // allowing app to deal w
 app.engine("html", require("ejs").renderFile); //mapping html to ejs renderer for rendering html files
 app.use(global.Packages.Oyster.Middleware.param_object); // this middleware add method "" in request object that iterates all params in request object and create object
 
-//app.use(app.router);
+// log web routes to files
+app.use(function(req, res, next){
+	var request = {
+		app: app,
+		url: req.url,
+		method: req.method,
+		headers: req.headers,
+		params: req.params,
+		body: req.body
+	};
+	global.Logger.info(" Web Route Calls Info ", request);
+	next();
+});
 
+//app.use(app.router);
 require("./appRoutes")(app); // load all routes
 
 app.use(global.Packages.Oyster.Middleware.error_handler); // to handle all the errors that are raised on app (should pass express cycle for e.g must call next(err); )
