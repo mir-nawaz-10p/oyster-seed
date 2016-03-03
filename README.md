@@ -17,3 +17,11 @@ Project initial template that based on oyster recommended structure to build nod
 - Clone repository
 - `$ npm install`
 - `$ npm start`
+
+## Log Folders/File
+===========
+- Create 'logs/**' folders 
+- 'logs/info/info.log'
+- 'logs/crashes/crashes.log'
+- 'logs/errors/errors.log'
+- 'logs/web/web.log'
