@@ -12,7 +12,7 @@ module.exports = {
 //Good Practice
 //function getAll(req, res, next){
 //
-//    userController.save.getAll(req.getInputObject()).then(function(output){
+//    new UserFacade(req).getAll(req.getInputObject()).then(function(output){
 //        res.status(200).send(global.shape(output))
 //    }).catch(next);
 //}

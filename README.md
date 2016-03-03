@@ -15,7 +15,7 @@ Project initial template that based on oyster recommended structure to build nod
 ## Setup Instructions
 
 - Clone repository
-- `$ npm install`
+- `$ ./setupServer`
 - `$ npm start`
 
 ## Log Folders/File
