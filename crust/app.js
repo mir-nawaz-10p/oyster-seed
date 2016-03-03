@@ -38,12 +38,14 @@ app.use(global.Packages.Oyster.Middleware.param_object); // this middleware add 
 // log web routes to files
 app.use(function(req, res, next){
 	var request = {
-		app: app,
-		url: req.url,
-		method: req.method,
-		headers: req.headers,
-		params: req.params,
-		body: req.body
+		details: {
+			app: app,
+			url: req.url,
+			method: req.method,
+			headers: req.headers,
+			params: req.params,
+			body: req.body
+		}
 	};
 	global.Logger.info(" Web Route Calls Info ", request);
 	next();
