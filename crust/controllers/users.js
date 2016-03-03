@@ -9,10 +9,19 @@ module.exports = {
   updateById
 };
 
+//Good Practice
+//function getAll(req, res, next){
+//
+//    userController.save.getAll(req.getInputObject()).then(function(output){
+//        res.status(200).send(global.shape(output))
+//    }).catch(next);
+//}
+
+
 function getAll(req, res, next){
 
     var userFacade = new UserFacade(req);
-    
+
     userFacade.getAll(req.getInputObject()).then(function(output){
         res.status(200).send(global.shape(output))
     }).catch(function(e){
