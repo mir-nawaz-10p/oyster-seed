@@ -14,7 +14,8 @@
     "moment": "~2.10.6",
     "request": "~2.61.0",
 	"node-oyster" : "git+https://github.com/faizulhaque/oyster.git",
-  "storehouse": "git+https://github.com/mideveloper/storehouse.git"
+  "storehouse": "git+https://github.com/mideveloper/storehouse.git",
+  "ephemeral": "git+https://github.com/mideveloper/ephemeral.git"
   },
   "devDependencies": {
     "grunt-cli": "~0.1.11",

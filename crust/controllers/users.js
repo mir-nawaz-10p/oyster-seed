@@ -33,6 +33,7 @@ function updateById(req, res, next) {
     new UserFacade(req).updateById(req.getInputObject()).then(function(output) {
         res.status(200).send(global.shape(output));
     }).catch(next);
+
 }
 
 module.exports = {
