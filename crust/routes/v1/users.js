@@ -2,8 +2,10 @@ var userController = require("../../controllers/users");
 var authController = require("../../controllers/auth");
 var router = require("express").Router();
 
+router.use(authController.isAuthenticated);
+
 router.route("/")
-    .get(authController.isAuthenticated, userController.getAll)
+    .get(userController.getAll)
     .post(userController.save);
 
 router.route("/info")

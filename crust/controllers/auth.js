@@ -35,6 +35,18 @@ function login(req, res, next) {
 
 }
 
+function logout(req, res, next) {
+
+    redis.remove(req.headers.token)
+        .then(function() {
+            res.status(400).send({
+                meta: { code: 400 },
+                results: "logged out"
+            });
+        }).catch(next);
+
+}
+
 function isAuthenticated(req, res, next) {
     redis.get(req.headers.token)
         .then(function(user) {
@@ -51,5 +63,6 @@ function isAuthenticated(req, res, next) {
 
 module.exports = {
     login: login,
+    logout: logout,
     isAuthenticated: isAuthenticated
 };
