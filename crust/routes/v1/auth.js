@@ -11,17 +11,17 @@ var router = require("express").Router();
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
 		{
-		  "meta": {
-		    "code": 200
-		  },
-		  "results": {
-		    "name": "name",
-		    "username": "mir123",
-		    "password": "password",
-		    "admin": true,
-		    "id": "tp-1457090896861",
-		    "token": "BzufMVzJWXZgV0vxFs9xoJjyirFE8j"
-		  }
+			"meta": {
+			"code": 200
+		},
+		"results": {
+			"name": "name",
+			"username": "mir123",
+			"password": "password",
+			"admin": true,
+			"id": "tp-1457090896861",
+			"token": "BzufMVzJWXZgV0vxFs9xoJjyirFE8j"
+		}
 		}
  *
  * @apiError Not-Found The username or password is not correct.
@@ -29,10 +29,10 @@ var router = require("express").Router();
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 404 Not-Found
 		{
-		  "meta": {
-		    "code": 404
-		  },
-		  "results": null
+		"meta": {
+			"code": 404
+		},
+		"results": null
 		}
  */
 router.route("/login")
@@ -48,10 +48,10 @@ router.route("/login")
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
 		{
-		  "meta": {
-		    "code": 200
-		  },
-		  "results": "logged out"
+		"meta": {
+			"code": 200
+		},
+		"results": "logged out"
 		}
  *
  * @apiError ForbiddenAccess The user token is not authenticatic.
@@ -59,10 +59,10 @@ router.route("/login")
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 403 Forbidden
 		{
-		  "meta": {
-		    "code": 403
-		  },
-		  "results": null
+		"meta": {
+			"code": 403
+		},
+		"results": null
 		}
  */
 router.route("/logout")
