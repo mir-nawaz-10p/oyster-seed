@@ -34,8 +34,8 @@ function logout(req, res, next) {
 
     redis.remove(req.headers.token)
         .then(function() {
-            res.status(400).send({
-                meta: { code: 400 },
+            res.status(200).send({
+                meta: { code: 200 },
                 results: "logged out"
             });
         }).catch(next);
