@@ -43,6 +43,7 @@ function logout(req, res, next) {
 }
 
 function isAuthenticated(req, res, next) {
+
     redis.get(req.headers.token)
         .then(function(user) {
             if (lodash.isEmpty(user)) {
@@ -54,6 +55,7 @@ function isAuthenticated(req, res, next) {
                 next();
             }
         }).catch(next);
+
 }
 
 module.exports = {
