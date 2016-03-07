@@ -1,9 +1,5 @@
 var UserFacade = require("../../lib/facade/users"),
-    cache = require("ephemeral"),
-    redis;
-redis = cache.initialize({
-    client: "redis"
-});
+    redis = global.Packages.redis;
 
 function getAll(req, res, next) {
 
@@ -49,6 +45,7 @@ function getInfo(req, res, next) {
         }).catch(next);
 
 }
+
 module.exports = {
     getAll: getAll,
     save: save,

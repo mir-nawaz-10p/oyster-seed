@@ -1,12 +1,7 @@
 var UserFacade = require("../../lib/facade/users"),
-    cache = require("ephemeral"),
-    redis,
+    redis = global.Packages.redis,
     lodash = global.Packages.lodash,
     chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-redis = cache.initialize({
-    client: "redis"
-});
 
 function randomString(length, chars) {
     var result = "";
