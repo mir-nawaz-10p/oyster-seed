@@ -18,24 +18,38 @@ function randomString(length, chars) {
 
 function login(req, res, next) {
 
-    new UserFacade(req).login(req.getInputObject()).then(function(output) {
-        if (lodash.isEmpty(output)) {
-            res.status(404).send({
-                meta: { code: 404 },
-                results: null
-            });
-        } else {
-            var token = randomString(30, chars);
-            redis.set(token, JSON.stringify(output), 60 * 60);
-            global.shape(output).results = lodash.merge(output, { token: token });
-            res.status(200).send(global.shape(output));
-        }
-    }).catch(next);
+    new UserFacade(req).login(req.getInputObject())
+        .then(function(output) {
+            if (lodash.isEmpty(output)) {
+                res.status(404).send({
+                    meta: { code: 404 },
+                    results: output
+                });
+            } else {
+                var token = randomString(30, chars);
+                redis.set(token, JSON.stringify(output), 60 * 60);
+                global.shape(output).results = lodash.merge(output, { token: token });
+                res.status(200).send(global.shape(output));
+            }
+        }).catch(next);
 
 }
 
-
+function isAuthenticated(req, res, next) {
+    redis.get(req.headers.token)
+        .then(function(user) {
+            if (lodash.isEmpty(user)) {
+                res.status(403).send({
+                    meta: { code: 403 },
+                    results: null
+                });
+            } else {
+                next();
+            }
+        }).catch(next);
+}
 
 module.exports = {
-    login: login
+    login: login,
+    isAuthenticated: isAuthenticated
 };

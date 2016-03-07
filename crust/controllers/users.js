@@ -1,4 +1,9 @@
-var UserFacade = require("../../lib/facade/users");
+var UserFacade = require("../../lib/facade/users"),
+    cache = require("ephemeral"),
+    redis;
+redis = cache.initialize({
+    client: "redis"
+});
 
 function getAll(req, res, next) {
 
@@ -36,10 +41,19 @@ function updateById(req, res, next) {
 
 }
 
+function getInfo(req, res, next) {
+
+    redis.get(req.headers.token)
+        .then(function(user) {
+            res.status(200).send(global.shape(JSON.parse(user)));
+        }).catch(next);
+
+}
 module.exports = {
     getAll: getAll,
     save: save,
     getById: getById,
     deleteById: deleteById,
-    updateById: updateById
+    updateById: updateById,
+    getInfo: getInfo
 };
