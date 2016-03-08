@@ -23,4 +23,6 @@ Project initial template that based on oyster recommended structure to build nod
 - `$ npm install apidoc -g`
 - `$ npm run docs`
 
-
+## e2e Testing with Frisby
+- `$ npm install jasmine-node -g`
+- `$ npm test`

@@ -29,19 +29,7 @@ module.exports = function(grunt) {
                 ]
             }
         },
-        
-        mochaTest: {
-            options: {
-                globals: ["should"],
-                timeout: 10000,
-                ui: "bdd",
-                reporter: "dot"
-            },
-            all: {
-                src: ["tests/**/*.js"]
-            }
-        },
-        
+
         watch: {
             files: [
                 "Gruntfile.js",
@@ -57,7 +45,7 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask("test", ["jshint",  "mochaTest"]);
+    grunt.registerTask("lint", "jshint");
     grunt.registerTask("default", ["watch:default"]);
 };
 
