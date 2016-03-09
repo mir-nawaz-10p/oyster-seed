@@ -26,3 +26,26 @@ Project initial template that based on oyster recommended structure to build nod
 ## e2e Testing with Frisby
 - `$ npm install jasmine-node -g`
 - `$ npm test`
+
+## Migration scripts
+- `$ npm install -g db-migrate`
+- `$ npm install -g db-migrate-mongodb`
+echo "update mongodb database"
+pushd ./database/mongodb
+   db-migrate up
+popd
+echo "drop mongodb collection"
+pushd ./database/mongodb
+   db-migrate down
+popd
+- `$ npm install -g db-migrate-mysql`
+- `$ db-migrate create users`
+echo "update mysql database"
+pushd ./database/mysql
+   db-migrate up
+popd
+echo "drop mysql table"
+pushd ./database/mysql
+   db-migrate down
+popd
+- `[Reference for db-migrate docs] (http://umigrate.readthedocs.org/projects/db-migrate/en/latest/)`

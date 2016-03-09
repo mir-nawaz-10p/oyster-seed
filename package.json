@@ -1,41 +1,47 @@
 {
-  "name": "oyster-seed",
-  "private": true,
-  "version": "0.0.1",
-  "dependencies": {
-    "apn": "~1.7.4",
-    "batch-request": "~0.1.1",
-    "bluebird": "~2.9.34",
-    "body-parser": "~1.13.3",
-    "ejs": "~2.3.3",
-    "ephemeral": "git+https://github.com/mideveloper/ephemeral.git",
-    "express": "~4.13.3",
-    "lodash": "~3.10.1",
-    "method-override": "~2.3.5",
-    "moment": "~2.10.6",
-    "node-oyster": "git+https://github.com/faizulhaque/oyster.git",
-    "request": "~2.61.0",
-    "storehouse": "git+https://github.com/mideveloper/storehouse.git"
-  },
-  "devDependencies": {
-    "chai-as-promised": "~4.1.0",
-    "frisby": "^0.8.5",
-    "grunt": "~0.4.2",
-    "grunt-cli": "~0.1.11",
-    "grunt-concurrent": "~0.4.3",
-    "grunt-contrib-jshint": "~0.8.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-newer": "~0.6.1",
-    "jshint-stylish": "~0.1.5",
-    "load-grunt-tasks": "~0.3.0",
-    "sinon": "~1.7.3",
-    "supertest": "~0.8.2",
-    "time-grunt": "~0.2.9"
-  },
-  "scripts": {
-    "test": "jasmine-node crust/tests/",
-    "start": "nodemon ./crust/server.js",
-    "setup": "./setupServer.hs",
-    "docs": "./apidoc.hs"
-  }
+    "name": "oyster-seed",
+    "private": true,
+    "version": "0.0.1",
+    "dependencies": {
+        "apn": "~1.7.4",
+        "batch-request": "~0.1.1",
+        "bluebird": "~2.9.34",
+        "body-parser": "~1.13.3",
+        "ejs": "~2.3.3",
+        "ephemeral": "git+https://github.com/mideveloper/ephemeral.git",
+        "express": "~4.13.3",
+        "lodash": "~3.10.1",
+        "method-override": "~2.3.5",
+        "moment": "~2.10.6",
+        "node-oyster": "git+https://github.com/faizulhaque/oyster.git",
+        "request": "~2.61.0",
+        "storehouse": "git+https://github.com/mideveloper/storehouse.git"
+    },
+    "devDependencies": {
+        "chai-as-promised": "~4.1.0",
+        "frisby": "^0.8.5",
+        "grunt": "~0.4.2",
+        "grunt-cli": "~0.1.11",
+        "grunt-concurrent": "~0.4.3",
+        "grunt-contrib-jshint": "~0.8.0",
+        "grunt-contrib-watch": "~0.5.3",
+        "grunt-newer": "~0.6.1",
+        "jshint-stylish": "~0.1.5",
+        "load-grunt-tasks": "~0.3.0",
+        "sinon": "~1.7.3",
+        "supertest": "~0.8.2",
+        "time-grunt": "~0.2.9"
+    },
+    "apidoc": {
+        "title": "oyster seed API",
+        "description": "apiDoc for oyster-seed",
+        "version": "0.0.1",
+        "sampleUrl": false
+    },
+    "scripts": {
+        "test": "jasmine-node crust/tests/",
+        "start": "nodemon ./crust/server.js",
+        "setup": "./setupServer.hs",
+        "docs": "./apidoc.hs"
+    }
 }

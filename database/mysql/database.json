@@ -1,0 +1,11 @@
+{
+  "dev": {
+    "driver": "mysql",
+    "host": "localhost",
+    "user": "root",
+    "password": "admin",
+    "database": "oyster-seed",
+    "multipleStatements": true
+  },
+  "sql-file": false
+}

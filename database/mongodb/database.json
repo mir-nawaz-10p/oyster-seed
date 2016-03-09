@@ -1,0 +1,7 @@
+{
+  "dev": {
+    "driver": "mongodb",
+    "database": "oyster-seed",
+    "host": "localhost"
+  }
+}
