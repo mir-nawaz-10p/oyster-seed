@@ -48,4 +48,4 @@ Project initial template that based on oyster recommended structure to build nod
 - pushd ./database/mysql
 -  db-migrate down
 - popd
-- `[Reference for db-migrate docs] (http://umigrate.readthedocs.org/projects/db-migrate/en/latest/)`
+- `[Reference for db-migrate docs](http://umigrate.readthedocs.org/projects/db-migrate/en/latest/)`
