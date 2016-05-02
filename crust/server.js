@@ -1,6 +1,5 @@
-/* jshint ignore:start */
-var app = require("./app.js");
-/* jshint ignore:end */
+"use strict";
+require("./app.js");
 
 // Cleanup
 process.on("SIGTERM", function() { // ctrl c

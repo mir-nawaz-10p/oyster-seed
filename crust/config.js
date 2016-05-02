@@ -1,3 +1,4 @@
+"use strict";
 function config() {
     return {
         env: process.env.NODE_ENV || "development",

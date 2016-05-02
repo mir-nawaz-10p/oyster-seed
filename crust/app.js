@@ -1,3 +1,4 @@
+"use strict";
 // load config
 var config = require("./config")();
 require("../lib/components")(); // this will load all external components that will be consumed
@@ -5,14 +6,13 @@ var express = require("express"),
     app = module.exports = express();
 global.Packages.Oyster.Utils.logger("tp-oyster-seed"); //setting up logger info
 
-
 // all environments
 app.set("title", "Oyster-Seed");
 process.env.PORT = config.port;
 
 // development only
 if ("development" === app.get("env")) {
-    //app.set("db uri", "localhost/dev");
+//app.set("db uri", "localhost/dev");
     global.showExceptionToClient = true;
 }
 
@@ -60,11 +60,11 @@ require("./global_async")().then(function() {
 
     app.listen(process.env.PORT); // this method is identical to http.createServer(app).listen(port);
     global.Logger.info("app started at port: " + process.env.PORT);
-    console.log("app started at port: " + process.env.PORT);
+    console.log("app started at port: " + process.env.PORT); //eslint-disable-line
 
 }).error(function(e) {
-    //log error here
+//log error here
     global.logger.crash(e);
-    console.log(e);
+    console.log(e); //eslint-disable-line
 });
 // start

@@ -1,5 +1,6 @@
+"use strict";
 var authController = require("../../controllers/auth");
-var router = require("express").Router();
+var router = require("express").Router(); //eslint-disable-line
 /**
  * @api {get} api/v1/auth/login Login authentication
  * @apiVersion 0.0.1

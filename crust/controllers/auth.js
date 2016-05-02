@@ -1,3 +1,4 @@
+"use strict";
 var UserFacade = require("../../lib/facade/users"),
     redis = global.Packages.redis,
     lodash = global.Packages.lodash,
@@ -12,7 +13,6 @@ function randomString(length, chars) {
 }
 
 function login(req, res, next) {
-
     new UserFacade(req).login(req.getInputObject())
         .then(function(output) {
             if (lodash.isEmpty(output)) {
@@ -20,18 +20,17 @@ function login(req, res, next) {
                     meta: { code: 404 },
                     results: output
                 });
-            } else {
+            }
+            else {
                 var token = randomString(30, chars);
                 redis.set(token, JSON.stringify(output), 60 * 60);
                 global.shape(output).results = lodash.merge(output, { token: token });
                 res.status(200).send(global.shape(output));
             }
         }).catch(next);
-
 }
 
 function logout(req, res, next) {
-
     redis.remove(req.headers.token)
         .then(function() {
             res.status(200).send({
@@ -43,7 +42,6 @@ function logout(req, res, next) {
 }
 
 function isAuthenticated(req, res, next) {
-
     redis.get(req.headers.token)
         .then(function(user) {
             if (lodash.isEmpty(user)) {
@@ -51,11 +49,11 @@ function isAuthenticated(req, res, next) {
                     meta: { code: 403 },
                     results: null
                 });
-            } else {
+            }
+            else {
                 next();
             }
         }).catch(next);
-
 }
 
 module.exports = {
