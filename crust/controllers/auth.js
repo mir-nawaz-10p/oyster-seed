@@ -2,7 +2,8 @@
 var UserFacade = require("../../lib/facade/users"),
     redis = global.Packages.redis,
     lodash = global.Packages.lodash,
-    chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    messageConstant = require("../../lib/constants/message");
 
 function randomString(length, chars) {
     var result = "";
@@ -18,7 +19,7 @@ function login(req, res, next) {
             if (lodash.isEmpty(output)) {
                 res.status(404).send({
                     meta: { code: 404 },
-                    results: output
+                    results: messageConstant.AUTHENTICATION_FAILED
                 });
             }
             else {
@@ -47,7 +48,7 @@ function isAuthenticated(req, res, next) {
             if (lodash.isEmpty(user)) {
                 res.status(403).send({
                     meta: { code: 403 },
-                    results: null
+                    results: messageConstant.AUTHORIZATION_FAILED
                 });
             }
             else {

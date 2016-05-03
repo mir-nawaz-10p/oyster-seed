@@ -30,14 +30,14 @@ Project initial template that based on oyster recommended structure to build nod
 ## Migration scripts
 - `$ npm install -g db-migrate`
 - `$ npm install -g db-migrate-mongodb`
-* echo "update mongodb database"
-* pushd ./database/mongodb
-*   db-migrate up
-* popd
-* echo "drop mongodb collection"
-* pushd ./database/mongodb
-*   db-migrate down
-* popd
+* `$ echo "update mongodb database" `
+* `$ pushd ./database/mongodb `
+* `$   db-migrate up `
+* `$ popd `
+* `$ echo ` "drop mongodb collection" `
+* `$ push `d ./database/mongodb `
+* `$   db `-migrate down `
+* `$ popd `
 - `$ npm install -g db-migrate-mysql`
 - `$ db-migrate create users`
 * echo "update mysql database"
@@ -52,3 +52,10 @@ Project initial template that based on oyster recommended structure to build nod
 
 ## Eslint
 * `npm run lint`
+
+## Redis server 
+* `$ wget http://download.redis.io/redis-stable.tar.gz ` 
+* `$ tar xvzf redis-stable.tar.gz ` 
+* `$ cd redis-stable ` 
+* `$ make ` 
+* `$ redis-server `

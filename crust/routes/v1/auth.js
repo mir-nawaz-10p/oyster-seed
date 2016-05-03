@@ -2,7 +2,7 @@
 var authController = require("../../controllers/auth");
 var router = require("express").Router(); //eslint-disable-line
 /**
- * @api {get} api/v1/auth/login Login authentication
+ * @api {POST} api/v1/auth/login Login authentication
  * @apiVersion 0.0.1
  * @apiName login
  * @apiGroup Auth
@@ -33,13 +33,13 @@ var router = require("express").Router(); //eslint-disable-line
 		"meta": {
 			"code": 404
 		},
-		"results": null
+		"results": "Incorrect username or password!"
 		}
  */
 router.route("/login")
-    .get(authController.login);
+    .post(authController.login);
 /**
- * @api {get} api/v1/auth/logout Logout Users
+ * @api {POST} api/v1/auth/logout Logout Users
  * @apiVersion 0.0.1
  * @apiName logout
  * @apiGroup Auth
@@ -63,10 +63,10 @@ router.route("/login")
 		"meta": {
 			"code": 403
 		},
-		"results": null
+		"results": "Authorization Failed!"
 		}
  */
 router.route("/logout")
-    .get(authController.isAuthenticated, authController.logout);
+    .post(authController.isAuthenticated, authController.logout);
 
 module.exports = router;

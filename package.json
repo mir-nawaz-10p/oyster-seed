@@ -14,7 +14,6 @@
     "method-override": "~2.3.5",
     "moment": "~2.10.6",
     "node-oyster": "git+https://github.com/faizulhaque/oyster.git",
-    "redis": "^2.6.0-2",
     "request": "~2.61.0",
     "storehouse": "git+https://github.com/mideveloper/storehouse.git"
   },
