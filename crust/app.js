@@ -48,6 +48,7 @@ app.use(function(req, res, next) {
         }
     };
     global.Logger.info(" Web Route Calls Info ", request);
+    console.log("-------------------------method: ", req.method, "path:", req.path); //eslint-disable-line
     next();
 });
 

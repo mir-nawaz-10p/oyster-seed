@@ -4,9 +4,7 @@
   "version": "0.0.1",
   "dependencies": {
     "abracadabra": "^0.2.1",
-    "apn": "~1.7.4",
     "batch-request": "~0.1.1",
-    "bluebird": "~2.9.34",
     "body-parser": "~1.13.3",
     "ejs": "~2.3.3",
     "ephemeral": "git+https://github.com/mideveloper/ephemeral.git",
@@ -16,6 +14,7 @@
     "method-override": "~2.3.5",
     "moment": "~2.10.6",
     "node-oyster": "git+https://github.com/faizulhaque/oyster.git",
+    "redis": "^2.6.0-2",
     "request": "~2.61.0",
     "storehouse": "git+https://github.com/mideveloper/storehouse.git"
   },
@@ -23,8 +22,7 @@
     "chai-as-promised": "~4.1.0",
     "frisby": "^0.8.5",
     "sinon": "~1.7.3",
-    "supertest": "~0.8.2",
-    "time-grunt": "~0.2.9"
+    "supertest": "~0.8.2"
   },
   "apidoc": {
     "title": "oyster seed API",
